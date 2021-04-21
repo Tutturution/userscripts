@@ -13,7 +13,9 @@
 (function() {
     'use strict';
     GM_registerMenuCommand("Установить громкость", () => {
-        var volume = prompt("Ввести значение", 100)
-        unsafeWindow.ap.setVolume((Math.pow(35, volume/100) - 1) / (35 - 1))
+        var volume = prompt("Введите значение", 100)
+        if (volume && !isNaN(volume)){
+            unsafeWindow.ap.setVolume((Math.pow(35, volume/100) - 1) / (35 - 1))
+        }
     }, "i");
 })();
